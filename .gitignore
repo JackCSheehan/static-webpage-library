@@ -1,0 +1,7 @@
+# Ignore all files (used to ignore VS files)
+*
+
+# Include only .cpp and .h source files
+!.gitignore
+!.cpp
+!.h
