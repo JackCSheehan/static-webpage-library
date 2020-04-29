@@ -3,8 +3,8 @@
 
 # Include only .cpp and .h files as well as the .gitignore
 !.gitignore
-!.cpp
-!.h
+!*.cpp
+!*.h
 
 # Grab .cpp and .h files even if they are in subdirectories
 !*/
