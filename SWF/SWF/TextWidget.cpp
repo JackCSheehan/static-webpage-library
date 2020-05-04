@@ -11,6 +11,7 @@ TextWidget::TextWidget(std::string t)
    fontFamily = "";
    fontSize = DEFAULT_FONT_SIZE;
    textAlignment = "";
+   shouldWriteFontSize = true;
 }
 
 /*
@@ -26,7 +27,7 @@ void TextWidget::write(std::ofstream& file) const
    file << "style = \"";
 
    //Write the font size
-   file << "font-size: " << fontSize << "px;";
+   if (shouldWriteFontSize) file << "font-size: " << fontSize << "px;";
 
    //Only the attributes which aren't blank will be written
    if (!backgroundColor.empty()) file << "background-color: " << backgroundColor << ";";

@@ -31,12 +31,12 @@ private:
    virtual void write(std::ofstream&) const override final;
 
 public:
-   Heading() : TextWidget() { type = HeadingType::H1; }
-   Heading(std::string t, HeadingType ht) : TextWidget(t) { type = ht; }
+   Heading();
+   Heading(std::string, HeadingType);
    ~Heading() {}
 
    //Getters
-   HeadingType getType() { return type; };
+   HeadingType getType() const { return type; };
 
    //Setters
    void setType(HeadingType ht) { type = ht; };

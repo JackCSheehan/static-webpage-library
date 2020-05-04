@@ -21,6 +21,7 @@ protected:
    std::string fontFamily;       //CSS value of font family
    int fontSize;                 //Font size in pixels
    std::string textAlignment;    //CSS value of text alignment
+   bool shouldWriteFontSize;     //Flag to indicate if font size should be written; useful for derived classes don't need that attribute, such as headings
 
    virtual void write(std::ofstream&) const override;
 

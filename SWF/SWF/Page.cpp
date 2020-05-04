@@ -54,10 +54,10 @@ void Page::write(std::string projectFilePath)
    file << "<!DOCTYPE html>\n";
 
    //Write opening HTML tag and language
-   file << "<hmtl lang = \"" << language << "\">\n";
+   file << "<html lang = \"" << language << "\">\n";
 
    //Write the page's title to the file next
-   file << "<title> " << title << " </title>\n";
+   file << "<title>" << title << "</title>\n";
 
    //Iterate through the widget's belonging to this page and write them all to the file
    for (Widget* widget : widgets)

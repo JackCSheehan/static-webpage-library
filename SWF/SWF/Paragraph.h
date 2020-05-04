@@ -1,5 +1,5 @@
-#ifndef BODY_H
-#define BODY_H
+#ifndef PARAGRAPH_H
+#define PARAGRAPH_H
 
 #include <string>
 #include <fstream>
@@ -9,15 +9,15 @@
 /*
 This class allows users to create a body of text on their site. Corresponds to the HTML <body> element.
 */
-class Body : public TextWidget
+class Paragraph : public TextWidget
 {
 private:
    virtual void write(std::ofstream&) const override final;
 
 public:
-   Body() : TextWidget() {}
-   Body(std::string t) : TextWidget(t) {}
-   ~Body() {}
+   Paragraph() : TextWidget() {}
+   Paragraph(std::string t) : TextWidget(t) {}
+   ~Paragraph() {}
 };
 
 #endif

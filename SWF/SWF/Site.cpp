@@ -10,10 +10,6 @@ Site::Site(std::string n, std::string p)
    std::string imagesFolderPath;    //Path to images folder
    std::string scriptsFolderPath;   //Path to scripts folder
    std::string stylesFolderPath;    //Path to styles folders
-   int mainFolderError;             //Status of main project folder creation. Holds -1 if there's an error
-   int imagesFolderError;           //Status of images folder creation
-   int scriptsFolderError;          //Status of scripts folder creation
-   int stylesFolderError;           //Status of styles folder creation
 
    //Assign members
    name = n;
