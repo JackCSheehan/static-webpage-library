@@ -25,11 +25,9 @@ void TextWidget::write(std::ofstream& file) const
 
    //Write the style property and opening quotes
    file << "style = \"";
-
-   //Write the font size
-   if (shouldWriteFontSize) file << "font-size: " << fontSize << "px;";
-
+   
    //Only the attributes which aren't blank will be written
+   if (shouldWriteFontSize) file << "font-size: " << fontSize << "px;";
    if (!backgroundColor.empty()) file << "background-color: " << backgroundColor << ";";
    if (!textColor.empty()) file << "color: " << textColor << ";";
    if (!fontFamily.empty()) file << "font-family: " << fontFamily << ";";

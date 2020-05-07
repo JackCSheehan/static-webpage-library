@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iostream> //TODO: remove header
 #include "Widget.h"
 
 class Site; //Forward declaration of Site class

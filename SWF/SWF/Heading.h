@@ -18,7 +18,8 @@ enum class HeadingType
    H6
 };
 
-const std::string HEADING_TAGS[] = {"h1", "h2", "h3", "h4", "h5", "h6"};   //Heading tags that corresponds to HeadingType enum to write function knows what tag to write
+//Heading tags that corresponds to HeadingType enum to write function knows what tag to write
+const std::string HEADING_TAGS[] = {"h1", "h2", "h3", "h4", "h5", "h6"};
 
 /*
 This class is used for creating heading of various sizes. Corresponds to the HTML tags <h1>, <h2>, etc.

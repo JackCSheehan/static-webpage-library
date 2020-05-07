@@ -5,14 +5,14 @@
 #include <fstream>
 #include "Widget.h"
 
-const int DEFAULT_FONT_SIZE = 16;
+const int DEFAULT_FONT_SIZE = 16;   //Default font size
 
 /*
 The TextWidget class is used to define widgets that correspond to HTML elements which rely only on text
 between their tags, such as <p>, <button>, and <body>. The text class has extra members so that users can
 enter in CSS values for various properties without having to write the entire style member directly.
 */
-class TextWidget : public Widget
+class TextWidget : virtual public Widget
 {
 protected:
    std::string text;             //Text of the text widget

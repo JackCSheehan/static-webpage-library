@@ -21,15 +21,15 @@ void Image::write(std::ofstream& file) const
    //Write the image tag
    file << "<img ";
 
+   //Write the rest of the relevant attributes from base class
+   Widget::write(file);
+
    //Write the image attributes
    if (!source.empty()) file << "src = \"" << source << "\" ";
    if (!altText.empty()) file << "alt = \"" << altText << "\"";
 
    if (width > 0) file << "width = \"" << width << "\" ";
    if (height > 0) file << "height = \"" << height << "\" ";
-
-   //Write the rest of the relevant attributes from base class
-   Widget::write(file);
 
    //Write the closing bracket
    file << ">\n";

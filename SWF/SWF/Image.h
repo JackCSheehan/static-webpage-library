@@ -23,10 +23,10 @@ public:
    ~Image() {}
 
    //Getters
-   std::string getSource() { return source; }
-   int getWidth() { return width; }
-   int getHeight() { return height; }
-   std::string getAltText() { return altText; }
+   std::string getSource() const { return source; }
+   int getWidth() const { return width; }
+   int getHeight() const { return height; }
+   std::string getAltText() const { return altText; }
 
    //Setters
    void setSource(std::string s) { source = s; }

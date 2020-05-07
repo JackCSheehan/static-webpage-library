@@ -25,7 +25,7 @@ protected:
 
 public:
    Widget();
-   ~Widget() {}
+   virtual ~Widget() {}
 
    //Getters
    std::string getClassName() const { return className; }
