@@ -20,7 +20,7 @@ protected:
 
 public:
    FormWidget();
-   ~FormWidget() {}
+   virtual ~FormWidget() {}
 
    //Getters
    bool isAutoFocused() const { return autoFocused; }

@@ -27,7 +27,7 @@ protected:
 
 public:
    TextWidget(std::string = "");
-   ~TextWidget() {}
+   virtual ~TextWidget() {}
 
    //Getters
    std::string getText() { return text; }

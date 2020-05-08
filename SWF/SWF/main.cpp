@@ -11,6 +11,8 @@
 #include "Image.h"
 #include "Button.h"
 #include "Input.h"
+#include "ExternalScript.h"
+#include "InternalScript.h"
 
 int main()
 {
@@ -41,6 +43,12 @@ int main()
    Input* input = new Input();
    input->setHintText("Enter text!");
 
+   //External script
+   ExternalScript* es = new ExternalScript("scripts/test.js");
+
+   //Internal script
+   InternalScript* is = new InternalScript("alert(\"This is from an internal script!\")");
+
    p1->addWidget(h);
    p1->addWidget(paragraph);
    p1->addWidget(image);
@@ -50,11 +58,18 @@ int main()
    p1->addWidget(button);
    p1->addWidget(input);
 
+   p1->addWidget(es);
+   p1->addWidget(is);
+
    site.addPage(p1);
 
    site.write();
 
    //TODO: make add eventwidget class and make applicable classes derive from it
+   //TODO: Add style sheets classes
+   //TODO: Add file base class and add deque to Page class for files. Then, make Style and Script classes derive
+   //from file instead so they aren't added as widgets
+   //TODO: replace vectors in site and page classes with deques
 
    return 0;
 }
