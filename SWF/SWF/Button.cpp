@@ -35,7 +35,7 @@ void Button::write(std::ofstream& file) const
    //EventWidget::write(file);
 
    //Write button attribute
-   file << "type = \"" << buttonTypeText << "\"";
+   file << "type=\"" << buttonTypeText << "\"";
 
    //Write closing bracket, text, and closing tag
    file << ">" << text << "</button>\n";

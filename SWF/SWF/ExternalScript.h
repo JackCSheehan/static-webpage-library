@@ -3,12 +3,12 @@
 
 #include <string>
 #include <fstream>
-#include "Widget.h"
+#include "File.h"
 
 /*
 This widget is used for including external scripts in a page.
 */
-class ExternalScript : public Widget
+class ExternalScript : public File
 {
 private:
    std::string source;  //Source file of script that user wants to include

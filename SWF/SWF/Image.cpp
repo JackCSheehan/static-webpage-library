@@ -25,11 +25,11 @@ void Image::write(std::ofstream& file) const
    Widget::write(file);
 
    //Write the image attributes
-   if (!source.empty()) file << "src = \"" << source << "\" ";
-   if (!altText.empty()) file << "alt = \"" << altText << "\"";
+   if (!source.empty()) file << "src=\"" << source << "\" ";
+   if (!altText.empty()) file << "alt=\"" << altText << "\" ";
 
-   if (width > 0) file << "width = \"" << width << "\" ";
-   if (height > 0) file << "height = \"" << height << "\" ";
+   if (width > 0) file << "width=\"" << width << "\" ";
+   if (height > 0) file << "height=\"" << height << "\" ";
 
    //Write the closing bracket
    file << ">\n";

@@ -1,23 +1,33 @@
 #include "Page.h"
 
 /*
-Constructor; sets name of page and title of page to given values and sets the language to the default language.
+Constructor; sets default values to members.
 */
 Page::Page(std::string n, std::string t)
 {
    name = n;
    title = t;
    language = DEFAULT_LANGUAGE;
+   charSet = DEFAULT_CHAR_SET;
+   description = "";
+   author = "";
+   viewport = "";
+   keywords = "";
 }
 
 /*
-Constructor; sets name of page, title of page, and page language to given values
+Constructor; sets name of page, title of page, and page language to given values.
 */
-Page::Page(std::string n, std::string t, std::string l)
+Page::Page(std::string n, std::string t, std::string l, std::string c, std::string d, std::string a, std::string v, std::string k)
 {
    name = n;
    title = t;
    language = l;
+   charSet = c;
+   description = d;
+   author = a;
+   viewport = v;
+   keywords = k;
 }
 
 /*
@@ -54,23 +64,48 @@ void Page::write(std::string projectFilePath)
    file << "<!DOCTYPE html>\n";
 
    //Write opening HTML tag and language
-   file << "<html lang = \"" << language << "\">\n";
+   file << "<html lang=\"" << language << "\">\n";
 
-   //Write the page's title to the file next
-   file << "<title>" << title << "</title>\n";
+   //Write the opening head tag
+   file << "\t<body>\n";
+
+   //Write all metadata
+   if (!charSet.empty()) file << "\t\t<meta charset=\"" << charSet << "\">\n";
+   if (!description.empty()) file << "\t\t<meta name=\"description\" content=\"" << description << "\">\n";
+   if (!author.empty()) file << "\t\t<meta name=\"author\" content=\"" << author << "\">\n";
+   if (!viewport.empty()) file << "\t\t<meta name=\"viewport\" content=\"" << viewport << "\">\n";
+   if (!keywords.empty()) file << "\t\t<meta name=\"keywords\" content=\"" << keywords << "\">\n\n";
+
+   //Write the page's title to the file
+   file << "\t\t<title>" << title << "</title>\n\n";
+
+   //Write all external files in the head tag
+   for (File* externalFile : files)
+   {
+      //Tab character for formatting
+      file << "\t\t";
+
+      //Call each file's virtual write function
+      externalFile->write(file);
+   }
+
+   //Write closing head tag
+   file << "\t</head>\n\n";
+
+   //Write opening body tag, which is where all widgets will be written
+   file << "\t<body>\n";
 
    //Iterate through the widget's belonging to this page and write them all to the file
    for (Widget* widget : widgets)
    {
-      /*
-      Since Widget's write function is virtual, the actual type pointed to by widget will have its write function
-      invoked, which in turn invokes the write functions of its parent classes.
-      */
+      file << "\t\t";
+
+      //Call each widget's virtual write function
       widget->write(file);
    }
 
-   //Close off the <html> tag once all data has been written and close the file
-   file << "</html>";
+   //Close off body and html tags
+   file << "\t</body>\n</html>";
    file.close();
 }
 
@@ -85,7 +120,23 @@ void Page::addWidget(Widget* newWidget)
 /*
 This function appends the given list of pointers to Widgets to the widgets list member.
 */
-void Page::addWidgets(std::vector<Widget*> newWidgets)
+void Page::addWidgets(std::deque<Widget*> newWidgets)
 {
    widgets.insert(widgets.end(), newWidgets.begin(), newWidgets.end());
+}
+
+/*
+This function adds the given pointer to a File to the files list member.
+*/
+void Page::addFile(File* newFile)
+{
+   files.push_back(newFile);
+}
+
+/*
+This function appends the given list of pointers to Files to the files list member.
+*/
+void Page::addFiles(std::deque<File*> newFiles)
+{
+   files.insert(files.end(), newFiles.begin(), newFiles.end());
 }

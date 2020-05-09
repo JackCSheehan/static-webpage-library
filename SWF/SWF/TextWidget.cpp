@@ -24,7 +24,7 @@ void TextWidget::write(std::ofstream& file) const
    Widget::write(file);
 
    //Write the style property and opening quotes
-   file << "style = \"";
+   file << "style=\"";
    
    //Only the attributes which aren't blank will be written
    if (shouldWriteFontSize) file << "font-size: " << fontSize << "px;";

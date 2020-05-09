@@ -3,7 +3,9 @@
 
 #include <string>
 #include <fstream>
+#include <deque>
 #include "Widget.h"
+#include "IOHelper.h"
 
 /*
 This function is used for embedding internal scripts into the page.

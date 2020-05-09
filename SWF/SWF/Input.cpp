@@ -37,11 +37,11 @@ void Input::write(std::ofstream& file) const
    FormWidget::write(file);
 
    //Write input widget attributes
-   if (!value.empty()) file << "value = \"" << value << "\" ";
-   if (!hintText.empty()) file << "placeholder = \"" << hintText << "\" ";
-   if (!altText.empty()) file << "alt = \"" << altText << "\" ";
-   if (!imageSource.empty()) file << "src = \"" << imageSource << "\" ";
+   if (!value.empty()) file << "value=\"" << value << "\" ";
+   if (!hintText.empty()) file << "placeholder=\"" << hintText << "\" ";
+   if (!altText.empty()) file << "alt=\"" << altText << "\" ";
+   if (!imageSource.empty()) file << "src=\"" << imageSource << "\" ";
 
    //Write input type and closing bracket
-   file << "type = \"" << inputTypeText << "\">\n";
+   file << "type=\"" << inputTypeText << "\">\n";
 }

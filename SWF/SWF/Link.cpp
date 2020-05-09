@@ -41,13 +41,13 @@ void Link::write(std::ofstream& file) const
    file << "<a ";
 
    //Write link attributes
-   if (!URL.empty()) file << "href = \"" << URL << "\" ";
-   if (!downloadLink.empty()) file << "download = \"" << downloadLink << "\" ";
+   if (!URL.empty()) file << "href=\"" << URL << "\" ";
+   if (!downloadLink.empty()) file << "download=\"" << downloadLink << "\" ";
 
    //Check that relationship is not none before writing
    if (relationship != LinkRelationship::NONE)
    {
-      file << "rel = \"" << linkRelationshipText << "\" ";
+      file << "rel=\"" << linkRelationshipText << "\" ";
    }
 
    //Write attributes from base class

@@ -20,8 +20,8 @@ directly, will override any individual styles set by a member function.
 void Widget::write(std::ofstream& file) const
 {
    //Only the values that aren't default or blank are written
-   if (!className.empty()) file << "class = \"" << className << "\" ";
-   if (!ID.empty()) file << "id = \"" << ID << "\" ";
-   if (!style.empty()) file << "style = \"" << style << "\" ";
+   if (!className.empty()) file << "class=\"" << className << "\" ";
+   if (!ID.empty()) file << "id=\"" << ID << "\" ";
+   if (!style.empty()) file << "style=\"" << style << "\" ";
    if (hidden != DEFAULT_IS_HIDDEN) file << "hidden ";
 }

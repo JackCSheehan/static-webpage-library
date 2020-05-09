@@ -19,7 +19,7 @@ int main()
    //TESTING
    Site site("Test Site", "");
 
-   Page* p1 = new Page("index", "Home");
+   Page* p1 = new Page("index", "Home", "en", "UTF-8", "Test Website", "Jack Sheehan", "width=device-width, initial-scale=1.0", "code, programming");
 
    //Heading widget
    Heading* h = new Heading("Heading", HeadingType::H1);
@@ -58,7 +58,7 @@ int main()
    p1->addWidget(button);
    p1->addWidget(input);
 
-   p1->addWidget(es);
+   p1->addFile(es);
    p1->addWidget(is);
 
    site.addPage(p1);
@@ -67,9 +67,7 @@ int main()
 
    //TODO: make add eventwidget class and make applicable classes derive from it
    //TODO: Add style sheets classes
-   //TODO: Add file base class and add deque to Page class for files. Then, make Style and Script classes derive
-   //from file instead so they aren't added as widgets
-   //TODO: replace vectors in site and page classes with deques
+   //TODO: replace vectors in site classe with deques
 
    return 0;
 }

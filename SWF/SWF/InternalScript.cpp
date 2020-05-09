@@ -13,5 +13,19 @@ Writes internal code
 */
 void InternalScript::write(std::ofstream& file) const
 {
-   file << "<script>\n" << code << "\n</script>\n";
+   std::deque<std::string> codeLines;  //The internal code split into lines
+
+   file << "<script>\n";
+
+   //Split the code into individual lines
+   codeLines = IOHelper::splitLines(code);
+
+   //Write each line of code to the page with three \t for correct formatting
+   for (std::string line : codeLines)
+   {
+      file << "\t\t\t" << line << "\n";
+   }
+
+   //Write closing script tag
+   file << "\t\t</script>\n";
 }
