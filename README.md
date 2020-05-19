@@ -104,6 +104,7 @@ int main()
 ```
 The result of this program is the Test Site file in the repository. The following HTML file is produced by the above code.
 
+```
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -140,3 +141,4 @@ The result of this program is the Test Site file in the repository. The followin
 		</ul>
 	</body>
 </html>
+```
