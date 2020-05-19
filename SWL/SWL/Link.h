@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include "TextWidget.h"
+#include "EventWidget.h"
 
 /*
 This enum corresponds to the relationship attribute that <a> tags have
@@ -32,7 +33,7 @@ const std::string LINK_VALUES[] = {"none", "alternate", "author", "bookmark", "e
 /*
 The Link class provides the user with the ability to create link-able text. Corresponds to HTML <a> tag.
 */
-class Link : public TextWidget
+class Link : public TextWidget, public EventWidget
 {
 private:
    std::string URL;                 //URL that link leads to

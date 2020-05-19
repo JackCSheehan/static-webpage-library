@@ -4,13 +4,13 @@
 #include <string>
 #include <fstream>
 #include <deque>
-#include "Widget.h"
+#include "File.h"
 #include "IOHelper.h"
 
 /*
 This function is used for embedding internal scripts into the page.
 */
-class InternalScript : public Widget
+class InternalScript : public File
 {
 private:
    std::string code; //The code to internal embed into page

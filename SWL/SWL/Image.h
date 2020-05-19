@@ -3,12 +3,12 @@
 
 #include <string>
 #include <fstream>
-#include "Widget.h"
+#include "EventWidget.h"
 
 /*
 This class allows users to insert images into the document. Corresponds to the HTML <img> tag.
 */
-class Image : public Widget
+class Image : public EventWidget
 {
 private:
    std::string source;   //URL to image

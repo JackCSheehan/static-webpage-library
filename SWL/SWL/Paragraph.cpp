@@ -10,6 +10,7 @@ void Paragraph::write(std::ofstream& file) const
 
    //Write attributes of base class
    TextWidget::write(file);
+   EventWidget::write(file);
 
    //write the closing bracket, text, then closing tag
    file << ">" << text << "</p>\n";

@@ -22,7 +22,7 @@ void Image::write(std::ofstream& file) const
    file << "<img ";
 
    //Write the rest of the relevant attributes from base class
-   Widget::write(file);
+   EventWidget::write(file);
 
    //Write the image attributes
    if (!source.empty()) file << "src=\"" << source << "\" ";

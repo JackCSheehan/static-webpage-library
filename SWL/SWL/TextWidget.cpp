@@ -20,11 +20,17 @@ will be written by the widget that derives this class. As such, this function on
 */
 void TextWidget::write(std::ofstream& file) const
 {
+   long startingFilePosition;       //Starting position in write file
+   bool inlineStyleWritten = false; //Keeps track of whether or not any inline styles have been written
+
    //Call the base classes write function since it won't be called due to the fact that it's virtual
    Widget::write(file);
 
+   //Get current position of file
+   startingFilePosition = file.tellp();
+
    //Write the style property and opening quotes
-   file << "style=\"";
+   if (!style.empty()) file << " style=\"";
    
    //Only the attributes which aren't blank will be written
    if (shouldWriteFontSize) file << "font-size: " << fontSize << "px;";
@@ -33,6 +39,15 @@ void TextWidget::write(std::ofstream& file) const
    if (!fontFamily.empty()) file << "font-family: " << fontFamily << ";";
    if (!textAlignment.empty()) file << "text-align: " << textAlignment << ";";
 
+   //If the file pointer moved, then a closing quote is needed
+   if (file.tellp() != startingFilePosition)
+   {
+      inlineStyleWritten = true;
+   }
+
    //Write the closing quotes
-   file << "\"";
+   if (inlineStyleWritten)
+   {
+      file << "\" ";
+   }
 }

@@ -30,6 +30,7 @@ void Heading::write(std::ofstream& file) const
 
    //Call base class write function to write attributes
    TextWidget::write(file);
+   EventWidget::write(file);
 
    //Write closing bracket, text, and closing 
    file << ">" << text << "</" << tag << ">\n";

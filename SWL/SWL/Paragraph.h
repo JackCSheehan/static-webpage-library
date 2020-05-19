@@ -3,13 +3,13 @@
 
 #include <string>
 #include <fstream>
-#include "Widget.h"
 #include "TextWidget.h"
+#include "EventWidget.h"
 
 /*
 This class allows users to create a body of text on their site. Corresponds to the HTML <body> element.
 */
-class Paragraph : public TextWidget
+class Paragraph : public TextWidget, public EventWidget
 {
 private:
    virtual void write(std::ofstream&) const override final;

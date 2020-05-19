@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include "TextWidget.h"
+#include "EventWidget.h"
 
 /*
 This enum defines the different sizes of headings available.
@@ -24,7 +25,7 @@ const std::string HEADING_TAGS[] = {"h1", "h2", "h3", "h4", "h5", "h6"};
 /*
 This class is used for creating heading of various sizes. Corresponds to the HTML tags <h1>, <h2>, etc.
 */
-class Heading : public TextWidget
+class Heading : public TextWidget, public EventWidget
 {
 private:
    HeadingType type;

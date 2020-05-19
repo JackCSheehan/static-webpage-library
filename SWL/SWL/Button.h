@@ -5,6 +5,7 @@
 #include <fstream>
 #include "TextWidget.h"
 #include "FormWidget.h"
+#include "EventWidget.h"
 
 /*
 Enum used for keeping track of the type of button; used for determining what type of button attribute to give
@@ -23,7 +24,7 @@ const std::string BUTTON_TYPES_TEXT[] = { "button", "reset", "submit" };
 /*
 A simple, clickable button widget. Corresponds to the HTML <button> element.
 */
-class Button : public TextWidget, public FormWidget
+class Button : public TextWidget, public FormWidget, public EventWidget
 {
 private:
    ButtonType type;  //The type of the HTML button

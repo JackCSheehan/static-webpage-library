@@ -6,5 +6,11 @@
 !*.cpp
 !*.h
 
+# Also include any .pngs and files relating to web development
+!*.png
+!*.html
+!*.css
+!*.js
+
 # Grab .cpp and .h files even if they are in subdirectories
 !*/

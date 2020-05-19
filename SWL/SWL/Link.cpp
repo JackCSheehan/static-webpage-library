@@ -52,6 +52,7 @@ void Link::write(std::ofstream& file) const
 
    //Write attributes from base class
    TextWidget::write(file);
+   EventWidget::write(file);
 
    //Write closing bracket, text, then closing tag
    file << ">" << text << "</a>\n";

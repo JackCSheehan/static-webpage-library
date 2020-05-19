@@ -35,6 +35,7 @@ void Input::write(std::ofstream& file) const
 
    //Call base class write function
    FormWidget::write(file);
+   EventWidget::write(file);
 
    //Write input widget attributes
    if (!value.empty()) file << "value=\"" << value << "\" ";

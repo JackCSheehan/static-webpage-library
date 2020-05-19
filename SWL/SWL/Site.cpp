@@ -74,7 +74,7 @@ This function appends the given list of pointers to Pages to the existing Pages 
 workaround here as with the addPage function to stop a user from entering in a statically allocated page as
 that would require some unintuitive actions by the user (such as creating a vector of type <Page*&>)
 */
-void Site::addPages(std::vector<Page*> newPages)
+void Site::addPages(std::deque<Page*> newPages)
 {
    pages.insert(pages.end(), newPages.begin(), newPages.end());
 }

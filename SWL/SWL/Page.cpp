@@ -32,13 +32,21 @@ Page::Page(std::string n, std::string t, std::string l, std::string c, std::stri
 
 /*
 Destructor; iterates through each dynamically allocated widget and deletes it so that the user does not have to
-do it themselves.
+do it themselves. Also deletes every file so the user does not have to do it.
 */
 Page::~Page()
 {
+
+   //Delete widgets
    for (Widget* widget : widgets)
    {
       delete widget;
+   }
+
+   //Delete files
+   for (File* file : files)
+   {
+      delete file;
    }
 }
 
@@ -67,7 +75,7 @@ void Page::write(std::string projectFilePath)
    file << "<html lang=\"" << language << "\">\n";
 
    //Write the opening head tag
-   file << "\t<body>\n";
+   file << "\t<head>\n";
 
    //Write all metadata
    if (!charSet.empty()) file << "\t\t<meta charset=\"" << charSet << "\">\n";

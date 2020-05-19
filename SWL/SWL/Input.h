@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include "FormWidget.h"
+#include "EventWidget.h"
 
 /*
 Corresponds to the different input types in HTML
@@ -30,7 +31,7 @@ const std::string INPUT_TYPE_TEXT[] = {"checkbox", "color", "date", "email", "fi
 /*
 Widget used for creating area for input; corresponds to HTML <input> element.
 */
-class Input : public FormWidget
+class Input : public FormWidget, public EventWidget
 {
 private:
    std::string value;         //Initial value to be filled in the input

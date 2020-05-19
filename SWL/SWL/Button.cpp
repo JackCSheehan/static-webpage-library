@@ -32,7 +32,7 @@ void Button::write(std::ofstream& file) const
    //Write base class attributes
    TextWidget::write(file);
    FormWidget::write(file);
-   //EventWidget::write(file);
+   EventWidget::write(file);
 
    //Write button attribute
    file << "type=\"" << buttonTypeText << "\"";
