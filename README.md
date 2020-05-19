@@ -1,8 +1,8 @@
-# static-webpage-framework
-The SWF is a basic framework written in C++ for developing static webpages. The SWF was written as a practice project to use polymorphism and virtual functions in a real and practical context.
+# static-webpage-library
+The SWL is a basic library written in C++ for developing static webpages. The SWL was written as a practice project to use polymorphism and virtual functions in a real and practical context.
 
 # An Example Project
-The following code is an example of how the SWF can be used.
+The following code is an example of how The SWL can be used.
 ```
 #include "Site.h"
 #include "Page.h"
@@ -102,7 +102,7 @@ int main()
    return 0;
 }
 ```
-The result of this program is the Test Site file in the repository. The following HTML file is produced by the above code.
+The result of this program is the Test Site file in the SWL folder in the repository. The following HTML file is produced by the above code.
 
 ```
 <!DOCTYPE html>
@@ -144,4 +144,4 @@ The result of this program is the Test Site file in the repository. The followin
 ```
 Notice how this project has no delete statements. All of the widgets are passed as pointers so that the Page destructor can delete all of the memory automatically so that the user does not have to do it themselves.
 
-Although this framework might have little use as a practical web development framework, it is useful as a demonstration of an actual use case of polymorphism, virtual inheritance, and virtual functions.
+Although this library might have little use as a practical web development framework, it is useful as a demonstration of an actual use case of polymorphism, virtual inheritance, and virtual functions.
