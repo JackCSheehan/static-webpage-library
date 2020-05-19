@@ -144,4 +144,4 @@ The result of this program is the Test Site file in the SWL folder in the reposi
 ```
 Notice how this project has no delete statements. All of the widgets are passed as pointers so that the Page destructor can delete all of the memory automatically so that the user does not have to do it themselves.
 
-Although this library might have little use as a practical web development framework, it is useful as a demonstration of an actual use case of polymorphism, virtual inheritance, and virtual functions.
+Although this project might have little use as a practical web development library, it is useful as a demonstration of an actual use case of polymorphism, virtual inheritance, and virtual functions.
