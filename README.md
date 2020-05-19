@@ -1,7 +1,7 @@
 # static-webpage-framework
 The SWF is a basic framework written in C++ for developing static webpages. The SWF was written as a practice project to use polymorphism and virtual functions in a real and practical context.
 
-# An Example Projects
+# An Example Project
 The following code is an example of how the SWF can be used.
 ```
 #include "Site.h"
@@ -142,3 +142,6 @@ The result of this program is the Test Site file in the repository. The followin
 	</body>
 </html>
 ```
+Notice how this project has no delete statements. All of the widgets are passed as pointers so that the Page destructor can delete all of the memory automatically so that the user does not have to do it themselves.
+
+Although this framework might have little use as a practical web development framework, it is useful as a demonstration of an actual use case of polymorphism, virtual inheritance, and virtual functions.
